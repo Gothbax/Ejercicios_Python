@@ -1,6 +1,6 @@
 # CLASE CARRO
 class Carro:
-    def __init__(self, marca, modelo, color, velocidad, encendido):
+    def __init__(self, marca, modelo, color, velocidad, encendido):a
         self.__marca = marca
         self.__modelo = modelo
         self.__color = color
