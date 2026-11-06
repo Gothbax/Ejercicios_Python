@@ -7,7 +7,6 @@ class Carro:
         self.__velocidad = velocidad
         self.__encendido = encendido
  
-    # getters
     def get_marca(self):
         return self.__marca
  
@@ -22,8 +21,7 @@ class Carro:
  
     def get_encendido(self):
         return self.__encendido
- 
-    # setters
+
     def set_marca(self, marca):
         self.__marca = marca
  
@@ -42,7 +40,6 @@ class Carro:
     def set_encendido(self, encendido):
         self.__encendido = encendido
  
-    # metodo __str__
     def __str__(self):
         if self.__encendido == True:
             estado = "encendido"
@@ -50,7 +47,6 @@ class Carro:
             estado = "apagado"
         return "Carro " + self.__marca + " " + self.__modelo + " | color: " + self.__color + " | velocidad: " + str(self.__velocidad) + " km/h | " + estado
  
-    # metodos de funcionamiento
     def encender(self):
         if self.__encendido == True:
             print("El carro ya esta encendido")
