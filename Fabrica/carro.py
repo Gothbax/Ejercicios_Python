@@ -1,3 +1,4 @@
+# CLASE CARRO
 class Carro:
     def __init__(self, marca, modelo, color, velocidad, encendido):
         self.__marca = marca
@@ -5,7 +6,7 @@ class Carro:
         self.__color = color
         self.__velocidad = velocidad
         self.__encendido = encendido
-
+ 
     def get_marca(self):
         return self.__marca
  
@@ -21,7 +22,6 @@ class Carro:
     def get_encendido(self):
         return self.__encendido
  
-    # setters
     def set_marca(self, marca):
         self.__marca = marca
  
@@ -32,7 +32,7 @@ class Carro:
         self.__color = color
  
     def set_velocidad(self, velocidad):
-
+    
         if velocidad < 0:
             self.__velocidad = 0
         else:
@@ -40,3 +40,43 @@ class Carro:
  
     def set_encendido(self, encendido):
         self.__encendido = encendido
+ 
+    def __str__(self):
+        if self.__encendido == True:
+            estado = "encendido"
+        else:
+            estado = "apagado"
+        return "Carro " + self.__marca + " " + self.__modelo + " | color: " + self.__color + " | velocidad: " + str(self.__velocidad) + " km/h | " + estado
+ 
+    def encender(self):
+        if self.__encendido == True:
+            print("El carro ya esta encendido")
+        else:
+            self.__encendido = True
+            print("Motor encendido")
+ 
+    def apagar(self):
+        if self.__velocidad > 0:
+            print("No se puede apagar en movimiento, frene primero")
+        else:
+            self.__encendido = False
+            print("Motor apagado")
+ 
+    def acelerar(self, incremento):
+        if self.__encendido == False:
+            print("Encienda el carro antes de acelerar")
+        else:
+            self.__velocidad = self.__velocidad + incremento
+            print("Acelerando... velocidad: " + str(self.__velocidad) + " km/h")
+ 
+    def frenar(self, decremento):
+        self.__velocidad = self.__velocidad - decremento
+        if self.__velocidad < 0:
+            self.__velocidad = 0
+        print("Frenando... velocidad: " + str(self.__velocidad) + " km/h")
+ 
+    def girar(self, direccion):
+        if self.__velocidad == 0:
+            print("El carro esta detenido, no puede girar")
+        else:
+            print("Girando a la " + direccion)
